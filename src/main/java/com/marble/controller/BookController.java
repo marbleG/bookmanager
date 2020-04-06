@@ -7,10 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.Mapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -65,8 +62,8 @@ public class BookController {
     }
 
     //删除书籍
-    @GetMapping("/delete")
-    public String delete(int id) {
+    @GetMapping("/delete/{id}")
+    public String delete(@PathVariable int id) {
         System.out.println("删除数据：" + id);
         bookService.deleteBookById(id);
         return "redirect:/book/allBook";

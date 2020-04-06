@@ -55,7 +55,7 @@
                             <a class="btn btn-warning"
                                href="${pageContext.request.contextPath}/book/update?id=${book.bookID}">修改</a>
                             <a class="btn btn-danger"
-                               href="${pageContext.request.contextPath}/book/delete?id=${book.bookID}">删除</a>
+                               href="${pageContext.request.contextPath}/book/delete/${book.bookID}">删除</a>
                         </td>
                     </tr>
                 </c:forEach>
