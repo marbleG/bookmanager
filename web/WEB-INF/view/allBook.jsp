@@ -27,6 +27,16 @@
             <div class="col-md-4 column">
                 <a href="${pageContext.request.contextPath}/book/add" class="btn btn-primary">增加书籍</a>
             </div>
+            <div class="col-md-4 column">
+                <span style="color: red;font-weight: bold">${error}</span>
+            </div>
+
+            <div class="col-md-4 column">
+                <form action="${pageContext.request.contextPath}/book/queryBook" method="post" class="form-inline">
+                    <input type="text" name="queryBookName" class="form-control" placeholder="请输入书籍名称">
+                    <input type="submit" value="查询" class="btn-primary">
+                </form>
+            </div>
         </div>
     </div>
     <div class="row clearfix">

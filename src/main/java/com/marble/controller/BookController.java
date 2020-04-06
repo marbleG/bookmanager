@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -67,6 +68,25 @@ public class BookController {
         System.out.println("删除数据：" + id);
         bookService.deleteBookById(id);
         return "redirect:/book/allBook";
+    }
+
+    //查询书籍
+    @PostMapping("/queryBook")
+    public String queryBook(String queryBookName, Model model) {
+        List<Books> list = new ArrayList<>();
+        if (queryBookName != null && queryBookName.length() > 0) {
+            Books books = bookService.queryBookByBookName(queryBookName);
+            if (books != null) {
+                list.add(books);
+            } else {
+                model.addAttribute("error", "未查到");
+            }
+
+        } else {
+            list = bookService.queryAllBook();
+        }
+        model.addAttribute("list", list);
+        return "allBook";
     }
 
 }
