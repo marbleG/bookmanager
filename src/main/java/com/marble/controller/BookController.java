@@ -39,11 +39,28 @@ public class BookController {
         return "addBook";
     }
 
-    //跳转至添加书籍
+    //添加书籍
     @PostMapping("/add")
     public String toAdd(Books books) {
         System.out.println("添加数据：" + books);
         bookService.addBook(books);
+        return "redirect:/book/allBook";
+    }
+
+    //跳转至修改书籍
+    @GetMapping("/update")
+    public String toUpdate(int id, Model model) {
+        System.out.println("获取查询id：" + id);
+        Books books = bookService.queryBookById(id);
+        model.addAttribute("book", books);
+        return "updateBook";
+    }
+
+    //修改书籍
+    @PostMapping("/update")
+    public String update(Books books) {
+        System.out.println("修改数据：" + books);
+        bookService.updateBook(books);
         return "redirect:/book/allBook";
     }
 

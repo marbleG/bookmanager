@@ -18,11 +18,11 @@
         update ssmbuild.books
         set bookName=#{bookName},
             bookCounts=#{bookCounts},
-            detail=#{default}
+            detail=#{detail}
         where bookID = #{bookID}
     </update>
 
-    <select id="queryBookByid" resultType="Books">
+    <select id="queryBookById" resultType="Books">
         select *
         from ssmbuild.books
         where bookID = #{bookId};
