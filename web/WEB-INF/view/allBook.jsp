@@ -34,6 +34,7 @@
             <table class="table table-hover table-striped">
                 <thead>
                 <tr>
+                    <th>序号</th>
                     <th>书籍编号</th>
                     <th>书籍名称</th>
                     <th>书籍数量</th>
@@ -43,8 +44,9 @@
 
                 </thead>
                 <tbody>
-                <c:forEach var="book" items="${list}">
+                <c:forEach var="book" items="${list}" varStatus="s">
                     <tr>
+                        <td>${s.count}</td>
                         <td>${book.bookID}</td>
                         <td>${book.bookName}</td>
                         <td>${book.bookCounts}</td>
@@ -52,7 +54,8 @@
                         <td>
                             <a class="btn btn-warning"
                                href="${pageContext.request.contextPath}/book/update?id=${book.bookID}">修改</a>
-                            <a class="btn btn-danger" href="">删除</a>
+                            <a class="btn btn-danger"
+                               href="${pageContext.request.contextPath}/book/delete?id=${book.bookID}">删除</a>
                         </td>
                     </tr>
                 </c:forEach>

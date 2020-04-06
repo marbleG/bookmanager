@@ -64,4 +64,12 @@ public class BookController {
         return "redirect:/book/allBook";
     }
 
+    //删除书籍
+    @GetMapping("/delete")
+    public String delete(int id) {
+        System.out.println("删除数据：" + id);
+        bookService.deleteBookById(id);
+        return "redirect:/book/allBook";
+    }
+
 }
