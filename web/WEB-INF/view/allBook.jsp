@@ -23,6 +23,11 @@
                 </h1>
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-4 column">
+                <a href="${pageContext.request.contextPath}/book/add" class="btn btn-primary">增加书籍</a>
+            </div>
+        </div>
     </div>
     <div class="row clearfix">
         <div class="col-md-12 column">
