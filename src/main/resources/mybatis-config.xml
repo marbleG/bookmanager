@@ -12,7 +12,7 @@
     <typeAliases>
         <package name="com.marble.pojo"/>
     </typeAliases>
-    <mappers>
+    <!--<mappers>
         <mapper class="com.marble.dao.BookMapper"/>
-    </mappers>
+    </mappers>-->
 </configuration>

@@ -3,6 +3,8 @@ package com.marble.server.impl;
 import com.marble.dao.BookMapper;
 import com.marble.pojo.Books;
 import com.marble.server.BookService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -11,7 +13,9 @@ import java.util.List;
  * @date 2020/4/6 13:09
  * @description
  */
+@Service
 public class BookServiceImpl implements BookService {
+    @Autowired
     private BookMapper bookMapper;
 
     public void setBookMapper(BookMapper bookMapper) {

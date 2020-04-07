@@ -7,9 +7,9 @@
     <context:component-scan base-package="com.marble.server"/>
 
     <!--2.将我们的所有业务类，注入到Spring，可配置，或注解-->
-    <bean id="bookServiceImpl" class="com.marble.server.impl.BookServiceImpl">
-        <property name="bookMapper" ref="bookMapper"/>
-    </bean>
+    <!--    <bean id="bookServiceImpl" class="com.marble.server.impl.BookServiceImpl">-->
+    <!--        <property name="bookMapper" ref="bookMapper"/>-->
+    <!--    </bean>-->
 
     <!--3.声明式事务-->
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
